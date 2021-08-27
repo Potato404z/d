@@ -1,0 +1,22 @@
+player = game:GetService("Players").LocalPlayer
+character = game.Players.LocalPlayer.Character
+dummy = game.Workspace.givemepencil.Dummy.Dummy.Effects
+item = character["MeshPartAccessory"].Handle -- change to your hat name
+item:BreakJoints()
+
+
+alignOr = Instance.new("AlignOrientation",character["Head"])
+alignPosition = Instance.new("AlignPosition",character["Head"])
+a0 = Instance.new("Attachment",item)
+a1 = Instance.new("Attachment",dummy["Sun"]) -- change to where you want your hat
+alignPosition.Attachment0 = a0
+alignPosition.Attachment1 = a1
+alignPosition.Responsiveness = 200
+alignPosition.RigidityEnabled = true
+alignOr.Attachment0 = a0
+alignOr.Attachment1 = a1
+alignOr.Responsiveness = 200
+alignOr.RigidityEnabled = true
+
+a0.Position = Vector3.new(0, 0, 0) -- change this
+a0.Orientation = Vector3.new(0,90, 0) -- and this to your choice
